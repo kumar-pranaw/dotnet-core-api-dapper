@@ -1,4 +1,5 @@
-﻿using Dapper.Service.IService;
+﻿using Dapper.Repository.Model;
+using Dapper.Service.IService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dapper.API.Controllers
@@ -27,8 +28,17 @@ namespace Dapper.API.Controllers
             return Ok(getEmployeeById);
         }
 
-        public ActionResult AddNewEmployee()
+        [HttpPost]
+        public ActionResult AddNewEmployee([FromBody]EmployeeModel model)
         {
+            _service.CreateNewEmployee(model);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteEmployee(int id)
+        {
+            _service.DeleteEmployee(id);
             return Ok();
         }
     }

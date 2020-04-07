@@ -7,6 +7,7 @@ namespace Dapper.Service.IService
     {
         IEnumerable<EmployeeModel> GetAllEmployees();
         EmployeeModel GetEmployeeById(int id);
-        bool CreateNewEmployee(EmployeeModel employee);
+        void CreateNewEmployee(EmployeeModel employee);
+        void DeleteEmployee(int id);
     }
 }

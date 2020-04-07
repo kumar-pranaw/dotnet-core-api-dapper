@@ -9,7 +9,7 @@ namespace Dapper.Repository.Model
         public int Id { get; set; }
         public string EmployeeName { get; set; }
         public string Role { get; set; }
-        public int Salary { get; set; }
+        public string Salary { get; set; }
         public string Company { get; set; }
     }
 }

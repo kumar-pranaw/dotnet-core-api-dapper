@@ -20,7 +20,7 @@ namespace Dapper.Repository.Repository
             IEnumerable<EmployeeModel> listemployee = null;
             using (var connection = new SqlConnection(connectionString))
             {
-                listemployee =  connection.Query<EmployeeModel>("select Id, EmployeeName, Role, Salary, Company from Employee");
+                listemployee = connection.Query<EmployeeModel>("select Id, EmployeeName, Role, Salary, Company from Employee");
             }
             return listemployee;
         }
@@ -35,10 +35,24 @@ namespace Dapper.Repository.Repository
             }
         }
 
-        public bool CreateNewEmployee(EmployeeModel model)
+        public void CreateNewEmployee(EmployeeModel model)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string addEmployee = @"Insert INTO Employee (EmployeeName,Role, Salary, Company) VALUES(@EmployeeName,@Role, @Salary, @Company)";
+                connection.Open();
+                connection.Execute(addEmployee, model);
+            }
         }
 
+        public void DeleteEmployee(int id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string deleteEmployee = @"DELETE FROM Employee Where Id=@id";
+                connection.Open();
+                connection.Execute(deleteEmployee,new { Id= id});
+            }
+        }
     }
 }

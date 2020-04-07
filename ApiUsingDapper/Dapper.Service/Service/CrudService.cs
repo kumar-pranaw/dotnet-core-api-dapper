@@ -16,9 +16,14 @@ namespace Dapper.Service.Service
             this._repo = repo;
         }
 
-        public bool CreateNewEmployee(EmployeeModel employee)
+        public void CreateNewEmployee(EmployeeModel employee)
         {
-            throw new NotImplementedException();
+            _repo.CreateNewEmployee(employee);
+        }
+
+        public void DeleteEmployee(int id)
+        {
+            _repo.DeleteEmployee(id);
         }
 
         public IEnumerable<EmployeeModel> GetAllEmployees()
@@ -30,5 +35,6 @@ namespace Dapper.Service.Service
         {
             return _repo.GetEmployeeById(id);
         }
+
     }
 }

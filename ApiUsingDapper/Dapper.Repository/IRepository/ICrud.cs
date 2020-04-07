@@ -10,6 +10,7 @@ namespace Dapper.Repository.IRepository
     {
         IEnumerable<EmployeeModel> GetAll();
         EmployeeModel GetEmployeeById(int id);
-        bool CreateNewEmployee(EmployeeModel model);
+        void CreateNewEmployee(EmployeeModel model);
+        void DeleteEmployee(int id);
     }
 }
