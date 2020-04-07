@@ -1,0 +1,9 @@
+C:\Users\pranav.verma\Documents\dotnet-core-api-dapper\ApiUsingDapper\Dapper.Repository\bin\Debug\netcoreapp3.1\Dapper.Repository.deps.json
+C:\Users\pranav.verma\Documents\dotnet-core-api-dapper\ApiUsingDapper\Dapper.Repository\bin\Debug\netcoreapp3.1\Dapper.Repository.dll
+C:\Users\pranav.verma\Documents\dotnet-core-api-dapper\ApiUsingDapper\Dapper.Repository\obj\Debug\netcoreapp3.1\Dapper.Repository.AssemblyInfoInputs.cache
+C:\Users\pranav.verma\Documents\dotnet-core-api-dapper\ApiUsingDapper\Dapper.Repository\obj\Debug\netcoreapp3.1\Dapper.Repository.AssemblyInfo.cs
+C:\Users\pranav.verma\Documents\dotnet-core-api-dapper\ApiUsingDapper\Dapper.Repository\obj\Debug\netcoreapp3.1\Dapper.Repository.csprojAssemblyReference.cache
+C:\Users\pranav.verma\Documents\dotnet-core-api-dapper\ApiUsingDapper\Dapper.Repository\bin\Debug\netcoreapp3.1\Dapper.Repository.pdb
+C:\Users\pranav.verma\Documents\dotnet-core-api-dapper\ApiUsingDapper\Dapper.Repository\obj\Debug\netcoreapp3.1\Dapper.Repository.csproj.CoreCompileInputs.cache
+C:\Users\pranav.verma\Documents\dotnet-core-api-dapper\ApiUsingDapper\Dapper.Repository\obj\Debug\netcoreapp3.1\Dapper.Repository.dll
+C:\Users\pranav.verma\Documents\dotnet-core-api-dapper\ApiUsingDapper\Dapper.Repository\obj\Debug\netcoreapp3.1\Dapper.Repository.pdb
