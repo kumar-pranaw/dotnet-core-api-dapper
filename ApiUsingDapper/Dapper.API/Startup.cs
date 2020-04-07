@@ -39,11 +39,12 @@ namespace Dapper.API
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+               
             }
 
-            app.UseHttpsRedirection();
-
+            //app.UseHttpsRedirection();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseAuthorization();

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Dapper.API.Dto;
+﻿using System.Threading.Tasks;
 using Dapper.Service.IService;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dapper.API.Controllers
@@ -19,10 +14,10 @@ namespace Dapper.API.Controllers
             this._service = service;
         }
 
-        public async Task<ActionResult> GetAllEmployee()
+        public ActionResult GetAllEmployee()
         {
             var getEmployees = _service.GetAllEmployees();
-            return Ok();
+            return Ok(getEmployees);
         }
     }
 }
