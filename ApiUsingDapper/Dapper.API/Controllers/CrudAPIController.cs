@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Dapper.Service.IService;
+﻿using Dapper.Service.IService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dapper.API.Controllers
@@ -14,10 +13,23 @@ namespace Dapper.API.Controllers
             this._service = service;
         }
 
+        [HttpGet]
         public ActionResult GetAllEmployee()
         {
             var getEmployees = _service.GetAllEmployees();
             return Ok(getEmployees);
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult GetEmployeeById(int id)
+        {
+            var getEmployeeById = _service.GetEmployeeById(id);
+            return Ok(getEmployeeById);
+        }
+
+        public ActionResult AddNewEmployee()
+        {
+            return Ok();
         }
     }
 }

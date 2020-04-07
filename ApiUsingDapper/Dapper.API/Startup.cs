@@ -32,6 +32,7 @@ namespace Dapper.API
             services.AddControllers();
             services.AddTransient<ICrud>(f => new CrudRepository("Persist Security Info = false;User Id = sa;password= Pranav@k1210;Initial Catalog = DapperDb;Data Source=PRANAV;Connection Timeout=100000"));
             services.AddScoped<ICrudService, CrudService>();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +42,11 @@ namespace Dapper.API
             {
                
             }
+            app.UseCors(builder =>
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                );
 
             //app.UseHttpsRedirection();
             app.UseDefaultFiles();

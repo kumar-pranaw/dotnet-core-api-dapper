@@ -6,5 +6,7 @@ namespace Dapper.Service.IService
     public interface ICrudService
     {
         IEnumerable<EmployeeModel> GetAllEmployees();
+        EmployeeModel GetEmployeeById(int id);
+        bool CreateNewEmployee(EmployeeModel employee);
     }
 }

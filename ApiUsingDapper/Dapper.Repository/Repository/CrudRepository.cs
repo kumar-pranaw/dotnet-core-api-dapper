@@ -3,8 +3,7 @@ using Dapper.Repository.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace Dapper.Repository.Repository
 {
@@ -25,5 +24,21 @@ namespace Dapper.Repository.Repository
             }
             return listemployee;
         }
+
+        public EmployeeModel GetEmployeeById(int id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string getByIdQuery = @"Select * FROM Employee WHERE Id=@Id";
+                connection.Open();
+                return connection.Query<EmployeeModel>(getByIdQuery, new { Id = id }).FirstOrDefault();
+            }
+        }
+
+        public bool CreateNewEmployee(EmployeeModel model)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

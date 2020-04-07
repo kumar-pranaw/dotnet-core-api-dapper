@@ -8,6 +8,8 @@ namespace Dapper.Repository.IRepository
 {
     public interface ICrud
     {
-       IEnumerable<EmployeeModel> GetAll();
+        IEnumerable<EmployeeModel> GetAll();
+        EmployeeModel GetEmployeeById(int id);
+        bool CreateNewEmployee(EmployeeModel model);
     }
 }

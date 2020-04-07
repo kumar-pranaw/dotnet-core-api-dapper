@@ -15,9 +15,20 @@ namespace Dapper.Service.Service
         {
             this._repo = repo;
         }
+
+        public bool CreateNewEmployee(EmployeeModel employee)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<EmployeeModel> GetAllEmployees()
         {
             return _repo.GetAll();
+        }
+
+        public EmployeeModel GetEmployeeById(int id)
+        {
+            return _repo.GetEmployeeById(id);
         }
     }
 }
