@@ -8,7 +8,7 @@ namespace Dapper.API.Controllers
     [ApiController]
     public class CrudAPIController : ControllerBase
     {
-        private readonly ICrudService _service; 
+        private readonly ICrudService _service;
         public CrudAPIController(ICrudService service)
         {
             this._service = service;
@@ -26,6 +26,14 @@ namespace Dapper.API.Controllers
         {
             var getEmployeeById = _service.GetEmployeeById(id);
             return Ok(getEmployeeById);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateEmployee([FromBody]EmployeeModel model, int id)
+        {
+            model.Id = id;
+            _service.UpdateEmployee(model);
+            return Ok();
         }
 
         [HttpPost]

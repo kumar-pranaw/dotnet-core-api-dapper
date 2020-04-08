@@ -12,5 +12,6 @@ namespace Dapper.Repository.IRepository
         EmployeeModel GetEmployeeById(int id);
         void CreateNewEmployee(EmployeeModel model);
         void DeleteEmployee(int id);
+        void UpdateEmployee(EmployeeModel employee);
     }
 }

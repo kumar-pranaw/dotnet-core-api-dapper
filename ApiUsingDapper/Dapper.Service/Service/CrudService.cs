@@ -36,5 +36,9 @@ namespace Dapper.Service.Service
             return _repo.GetEmployeeById(id);
         }
 
+        public void UpdateEmployee(EmployeeModel employee)
+        {
+            _repo.UpdateEmployee(employee);
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace Dapper.Service.IService
         EmployeeModel GetEmployeeById(int id);
         void CreateNewEmployee(EmployeeModel employee);
         void DeleteEmployee(int id);
+        void UpdateEmployee(EmployeeModel employee);
     }
 }

@@ -54,5 +54,15 @@ namespace Dapper.Repository.Repository
                 connection.Execute(deleteEmployee,new { Id= id});
             }
         }
+
+        public void UpdateEmployee(EmployeeModel employee)
+        {
+            using (var connection  = new SqlConnection(connectionString))
+            {
+                string updateQuery = @"UPDATE Employee SET EmployeeName=@EmployeeName,Role=@Role,Salary=@Salary,Company=@Company Where Id=@id";
+                connection.Open();
+                connection.Query(updateQuery, employee);
+            }
+        }
     }
 }
