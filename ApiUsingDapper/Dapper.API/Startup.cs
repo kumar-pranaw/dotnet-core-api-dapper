@@ -33,14 +33,29 @@ namespace Dapper.API
             services.AddTransient<ICrud>(f => new CrudRepository("Persist Security Info = false;User Id = sa;password= Pranav@k1210;Initial Catalog = DapperDb;Data Source=PRANAV;Connection Timeout=100000"));
             services.AddScoped<ICrudService, CrudService>();
             services.AddCors();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Crud API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Crud API V1");
+                c.RoutePrefix = string.Empty;
+            });
             if (env.IsDevelopment())
             {
-               
+                logger.LogInformation("In Development environment");
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
             }
             app.UseCors(builder =>
                 builder.AllowAnyOrigin()
