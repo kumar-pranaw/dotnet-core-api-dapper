@@ -1,19 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Dapper.Repository.IRepository;
 using Dapper.Repository.Repository;
 using Dapper.Service.IService;
 using Dapper.Service.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Dapper.API
 {
@@ -40,9 +35,9 @@ namespace Dapper.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,ILoggerFactory loggerFactory)
         {
-
+            
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -51,7 +46,7 @@ namespace Dapper.API
             });
             if (env.IsDevelopment())
             {
-                logger.LogInformation("In Development environment");
+
             }
             else
             {
